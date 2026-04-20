@@ -1,0 +1,1375 @@
+/* =========================================
+   1. CONFIGURACIÓN GLOBAL
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Movimiento suave al dar click en el menú */
+}
+
+/* Importación de fuentes oficiales */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,500&family=Montserrat:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. BARRA DE NAVEGACIÓN (HEADER)
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    /* justify-content: space-between es lo que separa el logo del menú */
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 60px;
+    background-color: #ffffff; /* Fondo blanco puro solicitado */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* Contenedor del Logo (Lado Izquierdo) */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    height: 55px; /* Ajusta según el tamaño de tu imagen */
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-family: 'Lora', serif; /* Tipografía tipo Times */
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a2a3a; /* Azul oscuro de la marca */
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.brand-sub {
+    font-family: 'Lora', serif;
+    font-size: 0.8rem;
+    color: #b18e3a; /* Dorado/Ocre de la marca */
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Contenedor que agrupa Menú y Botón (Lado Derecho) */
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Espacio entre el final del menú y el botón de cotizar */
+}
+
+/* Lista de enlaces del menú */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Espacio entre Inicio, Nosotros, etc. */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1a2a3a;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 5px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Efecto dinámico: línea azul que aparece al pasar el mouse */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #6187ac; /* Azul claro de la marca */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover {
+    color: #b18e3a; /* Cambia a dorado al pasar el mouse */
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Botón Cotizar */
+.btn-cotizar {
+    background-color: #b18e3a;
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-cotizar:hover {
+    background-color: #1a2a3a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   3. SECCIÓN HERO (PORTADA)
+   ========================================= */
+/* --- SECCIÓN HERO DINÁMICA --- */
+.hero {
+    height: 100vh;
+    /* Imagen con Overlay dinámico */
+    background: linear-gradient(rgba(26, 42, 58, 0.7), rgba(26, 42, 58, 0.4)), 
+                url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* EFECTO PARALLAX */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    animation: fadeInUp 1.2s ease-out; /* Animación de entrada */
+}
+
+.hero-content h1 {
+    font-family: 'Lora', serif;
+    font-size: 6rem; /* Un poco más imponente */
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    
+    text-shadow: 0px 4px 15px rgba(0,0,0,0.4);
+}
+
+.hero-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- ANIMACIÓN DE ENTRADA --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   4. SECCIONES DE CONTENIDO
+   ========================================= */
+.content-section {
+    padding: 100px 60px;
+    text-align: center;
+    min-height: 60vh;
+    scroll-margin-top: 90px;
+}
+
+.grey-bg {
+    background-color: #f8f9fa;
+}
+
+h2 {
+    font-family: 'Lora', serif;
+    font-size: 2.5rem;
+    color: #1a2a3a;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #b18e3a;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* --- ESTILOS ESPECÍFICOS PARA NOSOTROS --- */
+.about-section {
+    padding: 100px 10%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.about-intro {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.8;
+}
+
+.mission-vision-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.card {
+    flex: 1;
+    padding: 40px;
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #b18e3a; /* El dorado de tu marca */
+}
+
+.card h3 {
+    font-family: 'Lora', serif;
+    color: #1a2a3a;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+/* --- NUEVO CONTENEDOR CON LA IMAGEN DE COLUMNAS --- */
+/* 1. Unificar fondo y hacerlo continuo */
+.mission-vision-wrapper {
+    width: 100%;
+    background-image: linear-gradient(rgba(26, 42, 58, 0.9), rgba(26, 42, 58, 0.9)), 
+                      url('imagenes/fondo 1.jpg'); 
+    background-attachment: fixed; 
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: #1a2a3a; /* Azul de respaldo */
+    padding: 80px 0;
+    border-top: 3px solid #b18e3a; /* Línea dorada para separar del inicio */
+}
+/* Centrado del texto introductorio */
+.about-intro {
+    max-width: 800px; /* Un ancho un poco más estrecho mejora la lectura */
+    margin: 0 auto 60px auto;
+    text-align: center; /* ESTO CENTRA EL TÍTULO Y EL PÁRRAFO */
+}
+.intro-text {
+    font-size: 1.2rem; /* Un pelín más grande para que respire mejor */
+    letter-spacing: 0.5px;
+    opacity: 0.95; /* Suaviza un poco el blanco puro */
+}
+/* 2. Clase para que el texto de "Nosotros" sea blanco */
+.light-text {
+    color: #ffffff !important;
+}
+
+/* 3. Agrandar los cuadros hacia los lados */
+.mission-vision-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    max-width: 1350px; /* Esto los hace anchos como pediste */
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* 4. Estilo de las tarjetas (más grandes) */
+.card {
+    flex: 1;
+    background: #ffffff;
+    padding: 60px 45px; /* Más espacio interno */
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    text-align: center;
+}
+.mission-vision-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1000px; /* Reducimos el ancho máximo para dar más aire a las columnas */
+    margin: 0 auto;
+    padding: 0 40px; 
+}
+
+/* En pantallas muy anchas, volvemos a 'cover' para evitar distorsión */
+@media (min-width: 1600px) {
+    .mission-vision-wrapper {
+        background-size: cover;
+    }
+}
+/* --- ESTILOS ESPECÍFICOS PARA LOS NUEVOS ICONOS --- */
+
+/* Estilo para el contenedor del icono (div) */
+.card-icon {
+    font-size: 3rem; /* Tamaño del icono */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #b18e3a; /* EL COLOR OCRE/DORADO de tu marca */
+}
+
+/* Toque dinámico: que el icono gire un poco al pasar el mouse por la tarjeta */
+.card:hover .card-icon {
+    animation: iconPop 0.4s ease-out;
+}
+
+@keyframes iconPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2) rotate(5deg); }
+    100% { transform: scale(1); }
+}
+/* =========================================
+   5. SECCIÓN SERVICIOS (AJUSTE DE PROPORCIÓN)
+   ========================================= */
+
+#servicios h2::after {
+    display: none !important; 
+}
+section[id] {
+    scroll-margin-top: 80px; /* Ajusta este valor (80px o 100px) según el alto de tu menú */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+
+.section-title h2 {
+    font-family: 'Lora', serif;
+    font-size: 2.2rem;
+    color: #1a2a3a;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #b18e3a;
+    margin: 12px auto 0;
+}
+
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espacio más compacto entre servicios */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+}
+
+.service-row {
+    display: flex;
+    background: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    overflow: hidden;
+    height: 380px; /* REDUCIDO: Antes era 400px, ahora es más estilizado */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    width: 100%;
+}
+
+.service-info {
+    flex: 1;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-info h3 {
+    font-family: 'Lora', serif;
+    font-size: 1.4rem;
+    color: #1a2a3a;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #b18e3a; /* Línea decorativa bajo el nombre del servicio */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.service-info ul li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* --- AJUSTE DEL CARRUSEL PARA FOTOS COMPLETAS --- */
+.service-carousel-container {
+    flex: 1.1;
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f2f5; /* Un gris sutil que da profundidad */
+}
+
+.carousel-track {
+    display: flex;
+    width: 300%;
+    height: 100%;
+}
+
+.carousel-track img {
+    width: 33.333%;
+    height: 100%;
+    /* CAMBIO CLAVE: containment evita que la foto se corte */
+    object-fit: contain; 
+    padding: 15px; /* Pequeño aire para que la foto no toque los bordes */
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.carousel-btn:hover { background: #b18e3a; color: white; }
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+@media (min-width: 900px) {
+    .service-row:nth-child(even) { flex-direction: row-reverse; }
+}
+/* Recuperar el estilo de los iconos */
+.service-icon {
+    font-size: 2.5rem; /* Tamaño grande y visible */
+    color: #b18e3a !important; /* El dorado de tu marca */
+    margin-bottom: 15px;
+    display: block;
+}
+/* =========================================
+   6. SECCIÓN PROYECTOS
+   ========================================= */
+.projects-section {
+    padding: 40px 0 80px 0; /* 40px arriba, 0 lados, 80px abajo */
+    background-color: #fdfdfd;
+    scroll-margin-top: 90px;;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.project-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 350px;
+    background-color: #eee; /* Color gris mientras cargan las fotos */
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.project-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+/* Efecto al pasar el mouse */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 42, 58, 0.8); /* Azul de tu marca con transparencia */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-info {
+    text-align: center;
+    color: white;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.project-info span {
+    color: #b18e3a; /* Dorado */
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.project-info h3 {
+    font-family: 'Lora', serif;
+    font-size: 1.4rem;
+    margin-top: 5px;
+}
+
+.project-item:hover img {
+    transform: scale(1.1);
+}
+
+.project-item:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-item:hover .project-info {
+    transform: translateY(0);
+}
+/* =========================================
+   7. FOOTER DINÁMICO Y MODERNO
+   ========================================= */
+.main-footer {
+    background-color: #1a2a3a; /* Azul oscuro marca */
+    color: #ffffff;
+    padding: 80px 0 30px;
+    border-top: 4px solid #b18e3a; /* Detalle dorado superior */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 0 40px;
+}
+
+.footer-column h3 {
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: #b18e3a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el título y el contenido horizontalmente */
+    text-align: center;  /* Asegura que el texto del título esté centrado */
+}
+/* --- ICONOS DE REDES SOCIALES DINÁMICOS --- */
+.footer-social {
+    display: flex;
+    justify-content: center; /* Centra los iconos dentro de su contenedor */
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(177, 142, 58, 0.3);
+}
+
+/* Efectos individuales por red social */
+.social-icon.instagram:hover { background: #E1306C; transform: translateY(-5px) rotate(8deg); }
+.social-icon.facebook:hover { background: #4267B2; transform: translateY(-5px) rotate(-8deg); }
+.social-icon.whatsapp:hover { background: #25D366; transform: translateY(-5px) scale(1.1); }
+
+/* --- SECCIÓN UBICACIÓN --- */
+.footer-location p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #d1d1d1;
+}
+
+.address-text {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.btn-mapa {
+    display: inline-block;
+    margin-top: 15px;
+    color: #b18e3a;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+.btn-mapa:hover {
+    border-bottom: 1px solid #b18e3a;
+    letter-spacing: 1px;
+}
+
+/* --- COPYRIGHT --- */
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   8. AJUSTE SECCIÓN CLIENTES (VIDEO + LOGOS)
+   ========================================= */
+
+/* Contenedor principal para video y logos */
+.clients-container {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 40px; 
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+/* Columna del Video */
+.clients-video-wrapper {
+    flex: 1.2;
+    position: relative;
+    padding-bottom: 30%; /* Esto mantiene la proporción del video */
+    height: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.video-preview-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Evita que la gente pause el video al hacer clic */
+}
+
+/* Columna de los Logos - AJUSTADA */
+.clients-grid-side {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los logos bajen si no caben */
+    justify-content: center; /* Centra los logos si hay uno solo abajo */
+    gap: 30px;
+}
+
+/* Tamaño de cada logo */
+.clients-grid-side .client-logo {
+    flex: 0 1 calc(50% - 30px); /* Intenta poner 2 por fila */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Si quieres que los 3 logos se vean más ordenados, 
+   podemos hacer que el tercero ocupe el centro si prefieres, 
+   o simplemente centrarlos todos así: */
+
+.clients-grid-side .client-logo img {
+    max-width: 140px;
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+/* =========================================
+   ESTILOS TARJETA DE VIDEO SIMULADA
+   ========================================= */
+
+/* Contenedor principal flex para video y logos */
+.clients-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+/* Enlace de la tarjeta de video */
+.video-card-link {
+    flex: 1; /* Ocupa la mitad del espacio */
+    text-decoration: none;
+    display: block;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card-link:hover {
+    transform: translateY(-5px); /* Pequeño levante al pasar el mouse */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Contenedor interno de la miniatura */
+.video-card-preview {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Proporción horizontal 16:9 */
+    /* Si el video es vertical (Short), usa: padding-bottom: 177%; */
+    height: 0;
+    background-color: #000; /* Fondo negro por seguridad */
+}
+
+/* Imagen de miniatura */
+.video-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Se ajusta sin deformarse */
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.video-card-link:hover .video-thumbnail {
+    opacity: 1;
+}
+
+/* Superposición de Play */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3); /* Capa oscura inicial */
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background 0.3s ease;
+}
+
+.video-card-link:hover .video-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Se oscurece más al hover */
+}
+
+/* Círculo del ícono de Play */
+.play-icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.2); /* Blanco sutil inicial */
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Cambio de color del ícono al dorado de tu marca al hover */
+.video-card-link:hover .play-icon-circle {
+    background-color: #b18e3a; /* Tu color dorado sutil */
+    transform: scale(1.1);
+}
+
+/* Estilo para los logos (Se mantiene) */
+.clients-grid-side {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+/* =========================================
+   9. MEJORA ESTÉTICA: SECCIÓN COTIZAR
+   ========================================= */
+
+.quote-section {
+    padding: 100px 0;
+    background-color: #f4f4f4; /* Fondo gris muy claro para resaltar la tarjeta */
+}
+
+/* Contenedor que agrupa Info + Formulario */
+.quote-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; 
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
+}
+
+/* Columna de Texto a la izquierda */
+.quote-info h2 {
+    font-family: 'Lora', serif;
+    font-size: 2.8rem;
+    color: #1a2a3a;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.quote-info p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Datos de contacto (Iconos dorados) */
+.contact-details .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #1a2a3a;
+}
+
+.contact-details i {
+    color: #b18e3a;
+    font-size: 1.3rem;
+}
+
+/* --- TARJETA DEL FORMULARIO (NIVEL PREMIUM) --- */
+.contact-form {
+    background: #1a2a3a; /* Azul oscuro oficial */
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    border: 1px solid rgba(177, 142, 58, 0.2); /* Borde dorado muy sutil */
+}
+
+.contact-form h3 {
+    color: #ffffff;
+    font-family: 'Lora', serif;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Campos de entrada */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    color: white;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Efecto de iluminación al escribir */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #b18e3a;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 0 12px rgba(177, 142, 58, 0.3);
+}
+
+/* Botón de enviar mejorado */
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background-color: #b18e3a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #94762e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Responsivo para celulares */
+@media (max-width: 850px) {
+    .quote-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .contact-details .detail-item {
+        justify-content: center;
+    }
+}
+/* Esto se activa solo en pantallas menores a 768px (celulares) */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Cambia de 3 columnas a 1 sola */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .nav-links {
+        display: none; /* Aquí es donde normalmente crearías un menú hamburguesa */
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem; /* Ajusta el tamaño de letra para que no se corte */
+    }
+}
+/* =========================================
+   AJUSTES PARA MÓVILES (OPTIMIZADO)
+   ========================================= */
+@media (max-width: 768px) {
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+        
+    }
+
+    /* 1. Navbar: Altura automática para que quepa el menú */
+    .navbar {
+        flex-direction: column;
+        padding: 10px 0;
+        height: auto;
+        position: relative; /* Cambiamos a relative solo en móvil para que no tape el Hero */
+    }
+
+    .logo-container {
+        width: 100%;
+        justify-content: center; /* Centra el logo */
+        margin-bottom: 10px;
+    }
+
+    .nav-container {
+        width: 100%;
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        gap: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px 0;
+        font-size: 0.8rem;
+    }
+
+    .btn-cotizar {
+        margin: 15px auto;
+        width: 80%; /* Botón más ancho y centrado */
+        text-align: center;
+    }
+
+    /* 2. Hero: Ajuste para que se vea la portada */
+    .hero {
+        height: 70vh; /* Bajamos la altura en móvil para que sea más estético */
+        min-height: 400px;
+        background-attachment: scroll; /* El efecto parallax suele fallar en móviles, mejor scroll normal */
+        padding-top: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem; /* Tamaño ideal para pantalla de celular */
+        letter-spacing: 4px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        padding: 0 20px;
+        letter-spacing: 1px;
+    }
+}
+/* =========================================
+   AJUSTES PARA MÓVILES (OPTIMIZADO)
+   ========================================= */
+@media (max-width: 768px) {
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* 1. Navbar: Altura automática para que quepa el menú */
+    .navbar {
+        flex-direction: column;
+        padding: 10px 0;
+        height: auto;
+        position: relative; 
+    }
+
+    .logo-container {
+        width: 100%;
+        justify-content: center; 
+        margin-bottom: 10px;
+    }
+
+    .nav-container {
+        width: 100%;
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        gap: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px 0;
+        font-size: 0.8rem;
+    }
+
+    .btn-cotizar {
+        margin: 15px auto;
+        width: 80%; 
+        text-align: center;
+    }
+
+    /* 2. Hero: Ajuste para que se vea la portada */
+    .hero {
+        height: 70vh; 
+        min-height: 400px;
+        background-attachment: scroll; 
+        padding-top: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+        letter-spacing: 4px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        padding: 0 20px;
+        letter-spacing: 1px;
+    }
+
+    /* 3. SECCIÓN NOSOTROS (Misión y Visión apiladas) */
+    .mission-vision-grid {
+        flex-direction: column; /* Esto pone una tarjeta debajo de otra */
+        align-items: center;
+        gap: 25px; /* Espacio entre las tarjetas */
+        padding: 0 20px;
+    }
+
+    .card {
+        width: 100%; /* Que ocupen todo el ancho del celular */
+        max-width: 100%;
+        padding: 30px 20px; /* Menos espacio interno para que quepa más texto */
+    }
+
+    .about-intro {
+        padding: 0 20px;
+        margin-bottom: 30px;
+    }
+} 
+
+/* --- BASE DEL CARRUSEL (Para PC y Móvil) --- */
+.service-carousel-container {
+    position: relative;
+    overflow: hidden; /* Esto es vital para que las fotos no se desparramen */
+    width: 100%;
+    background-color: #f0f2f5;
+}
+
+.carousel-track {
+    display: flex; /* Pone las imágenes una al lado de la otra */
+    overflow-x: hidden; /* Oculta la barra de desplazamiento */
+    scroll-behavior: smooth; /* Hace que el movimiento sea fluido */
+    width: 100%;
+}
+
+.carousel-track img {
+    min-width: 100%; /* Cada imagen ocupa exactamente el 100% del contenedor */
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Para que la foto se vea completa sin cortarse */
+    flex-shrink: 0; /* Evita que las imágenes se compriman */
+}/* <--- Esta es la llave que cierra todo el @media */
+
+
+@media (max-width: 768px) {
+    /* ... (tus estilos anteriores de navbar, hero y nosotros que ya funcionan) ... */
+
+    /* --- AJUSTE SECCIÓN SERVICIOS --- */
+    
+    .section-title h2 {
+        font-size: 2rem; /* Título principal más equilibrado */
+        padding: 0 15px;
+    }
+
+    .services-list {
+        gap: 30px; /* Espacio entre cada servicio apilado */
+        padding: 0 15px 60px;
+    }
+
+    /* ¡ESTO APILA INFO + CARRUSEL! */
+    .service-row {
+        flex-direction: column; /* Cambia de fila a columna */
+        height: auto; /* Altura automática para que quepa todo el contenido apilado */
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Ajuste para que los servicios pares no se inviertan en móvil */
+    @media (min-width: 900px) {
+        .service-row:nth-child(even) { flex-direction: row-reverse; }
+    }
+    /* Pero en móvil, forzamos que todos sean columna normal */
+    .service-row:nth-child(even) { flex-direction: column; }
+
+    /* Columna superior: Información */
+    .service-info {
+        padding: 25px 20px;
+        text-align: left; /* Mantenemos el texto a la izquierda, es más legible */
+    }
+
+    .service-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .service-info ul li {
+        font-size: 0.85rem;
+        margin-bottom: 6px;
+    }
+
+    .service-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    /* Columna inferior: Carrusel */
+    .service-carousel-container {
+        width: 100%;
+        height: 250px; /* Altura fija para el carrusel en móvil, puedes ajustarla */
+        order: 2; /* Asegura que el carrusel vaya debajo de la info */
+    }
+
+    .carousel-track img {
+        padding: 10px; /* Un poco más de aire para las fotos */
+    }
+
+    /* Botones del carrusel más pequeños para no estorbar */
+    .carousel-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+}
+@media (max-width: 768px) {
+    /* ... (tus otros estilos de navbar y servicios) ... */
+
+    /* --- AJUSTE CLIENTES MÓVIL --- */
+    .clients-container {
+        flex-direction: column; /* Video arriba, logos abajo */
+        align-items: center;
+        text-align: center;
+    }
+
+    .video-card-link {
+        width: 100%;
+        max-width: 260px; /* Un poco más pequeño en celular */
+        margin-bottom: 40px;
+    }
+
+    .clients-grid-side {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr); /* 2 logos por fila */
+        gap: 20px;
+    }
+
+    .client-logo img {
+        max-width: 100px;
+        filter: grayscale(0); /* Color en móvil para que resalten */
+        opacity: 1;
+    }
+}
+/* Estilo específico para el botón de portafolio */
+.btn-portafolio {
+    display: inline-block !important;
+    margin-top: 20px !important;
+    padding: 12px 30px !important;
+    background-color: #b08d44 !important; /* El dorado de tu logo */
+    color: white !important;
+    text-decoration: none !important; /* Quita el subrayado azul */
+    font-weight: bold !important;
+    border-radius: 5px !important;
+    text-transform: uppercase !important;
+    font-size: 14px !important;
+    border: none !important;
+    transition: background 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+/* Efecto al pasar el mouse */
+.btn-portafolio:hover {
+    background-color: #8e6f33 !important; /* Un dorado más oscuro */
+    color: white !important;
+}
+.comparison-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.comparison-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.comparison-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.comparison-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Una al lado de la otra */
+    gap: 10px;
+}
+
+.img-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.img-box img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.img-box span {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(176, 141, 68, 0.9); /* Tu dorado */
+    color: white;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.comparison-card h3 {
+    margin-top: 15px;
+    font-family: 'Playfair Display', serif;
+    color: #1a2a3a;
+    text-align: center;
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+    .comparison-images {
+        grid-template-columns: 1fr; /* Una arriba de la otra en móvil */
+    }
+}
