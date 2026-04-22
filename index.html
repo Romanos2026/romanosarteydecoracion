@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romanos | Arte & Decoración - Obra Civil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="romanosestilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="imagenes/LOGO-ROMANOS-3.jpg" alt="Logo Romanos" class="logo-img">
+            <div class="logo-text">
+                <span class="brand-name">ROMANOS</span>
+                <span class="brand-sub">Arte & Decoración S.A.S</span>
+            </div>
+        </div>
+            <div class="nav-container">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#clientes">Clientes</a></li>
+            </ul>
+        </nav>
+        <a href="#contacto" class="btn-cotizar">Cotizar</a>
+    </header>
+
+    <section class="hero">
+    <div class="hero-content">
+        <h1>ROMANOS</h1>
+        <p>Elevando los estándares de la obra civil.</p>
+        
+        <a href="Portafolio de servicios - ROMANOS._compressed.pdf" class="btn-portafolio" target="_blank">
+            VER PORTAFOLIO DE SERVICIOS
+        </a>
+    </div>
+</section>
+
+   <section id="nosotros">
+    <div class="mission-vision-wrapper">
+        <div class="container">
+             <div class="about-intro">
+                <h2 class="light-text">Nosotros</h2>
+                <p class="intro-text light-text">
+                    Somos una empresa especializada en remodelación, construcción y acabados, dedicada a transformar espacios en lugares funcionales, modernos y de alta calidad. Nuestro objetivo es ofrecer soluciones integrales para hogares, oficinas y espacios comerciales, garantizando resultados que superen las expectativas de nuestros clientes.
+                </p>
+            </div>
+
+            <div class="mission-vision-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Misión</h3>
+                    <p>Brindar soluciones integrales en construcción liviana, remodelación y acabados arquitectónicos, transformando espacios interiores y exteriores a través de la calidad, la funcionalidad y la estética. Respaldados por más de 20 años de experiencia, nos comprometemos con el cumplimiento y la excelencia técnica para satisfacer las necesidades de clientes en Colombia.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Visión</h3>
+                    <p>Para el año 2030, Romanos Arte y Decoración SAS será reconocida como una empresa líder y referente en el sector de acabados y remodelaciones a nivel nacional, destacándose por la innovación en materiales sostenibles y la digitalización de sus procesos de diseño. Aspiramos a ser el aliado estratégico número uno.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="servicios" class="services-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Nuestros Servicios</h2>
+            <p>Soluciones integrales con acabados de alta gama y precisión técnica.</p>
+        </div>
+
+       <div class="services-list">
+    
+    </div> <div class="service-row">
+        <div class="service-info">
+            <div class="service-icon"><i class="fas fa-hammer"></i></div>
+            <h3>Obra Civil y Remodelación</h3>
+            <ul>
+                <li>Pañetes y enchapes</li>
+                <li>Obras civiles generales</li>
+                <li>Adecuación de espacios interiores y exteriores</li>
+            </ul>
+        </div>
+        <div class="service-carousel-container">
+            <div class="carousel-track">
+                <img src="imagenes/pañete-1.jpg" alt="Obra Civil">
+                <img src="imagenes/obra civil 1.jpg" alt="Remodelación">
+                <img src="imagenes/adecuacion.jpeg" alt="Acabados">
+            </div>
+        <button class="carousel-btn prev" onclick="moveCarousel(this, -1)"><i class="fas fa-chevron-left"></i></button>
+<button class="carousel-btn next" onclick="moveCarousel(this, 1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+   </div> <div class="service-row">
+        <div class="service-info">
+            <div class="service-icon"><i class="fas fa-border-all"></i></div>
+            <h3>Sistemas Livianos y Acabados</h3>
+            <ul>
+                <li>Construcción en seco (Drywall/Superboard)</li>
+                <li>Cielo rasos (PVC, fibra mineral, yeso)</li>
+                <li>Pintura arquitectónica y acabados decorativos</li>
+            </ul>
+        </div>
+        <div class="service-carousel-container">
+            <div class="carousel-track">
+                <img src="imagenes/construccion en seco.jpeg" alt="Sistemas Livianos">
+                <img src="imagenes/techo.jpeg" alt="Cielo Raso">
+                <img src="imagenes/acabados.jpeg" alt="Pintura">
+            </div>
+        <button class="carousel-btn prev" onclick="moveCarousel(this, -1)"><i class="fas fa-chevron-left"></i></button>
+<button class="carousel-btn next" onclick="moveCarousel(this, 1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    </div> <div class="service-row">
+        <div class="service-info">
+            <div class="service-icon"><i class="fas fa-couch"></i></div>
+            <h3>Divisiones y Mobiliario</h3>
+            <ul>
+                <li>Divisiones de oficina (Aluminio/Vidrio)</li>
+                <li>Mobiliario en madera y Madecor</li>
+                <li>Puestos de trabajo y carpintería</li>
+            </ul>
+        </div>
+        <div class="service-carousel-container">
+            <div class="carousel-track">
+                <img src="imagenes/vidrio.jpeg" alt="Divisiones">
+                <img src="imagenes/comedor.jpeg" alt="Mobiliario">
+                <img src="imagenes/carpinteria.jpg" alt="Carpintería">
+            </div>
+        <button class="carousel-btn prev" onclick="moveCarousel(this, -1)"><i class="fas fa-chevron-left"></i></button>
+<button class="carousel-btn next" onclick="moveCarousel(this, 1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    </div> <div class="service-row">
+        <div class="service-info">
+            <div class="service-icon"><i class="fas fa-ruler-combined"></i></div>
+            <h3>Detalles y Especialidades</h3>
+            <ul>
+                <li>Persianas y cortinas</li>
+                <li>Instalación de pisos (Mármol, PVC, Laminados)</li>
+                <li>Vidrios de seguridad y diseño publicitario en vinilo</li>
+            </ul>
+        </div>
+        <div class="service-carousel-container">
+            <div class="carousel-track">
+                <img src="imagenes/persianas.jpg" alt="Pisos">
+                <img src="imagenes/piso.jpg" alt="Cortinas">
+                <img src="imagenes/divisiones.jpeg" alt="Vidrios">
+            </div>
+        <button class="carousel-btn prev" onclick="moveCarousel(this, -1)"><i class="fas fa-chevron-left"></i></button>
+<button class="carousel-btn next" onclick="moveCarousel(this, 1)"><i class="fas fa-chevron-right"></i></button>>
+    </div>
+</div>
+
+    <section id="proyectos" class="projects-section">
+    <div class="section-title">
+        <h2>Nuestros Proyectos</h2>
+        <p>Una muestra de nuestra excelencia en ejecución y detalle.</p>
+    </div>
+
+    <div class="projects-grid">
+        <div class="project-item">
+            <img src="imagenes/remodelacion 1.jpeg" alt="Proyecto Romanos">
+            <div class="project-overlay">
+                <div class="project-info">
+                    <span>Remodelación</span>
+                    <h3>Espacio Moderno</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <img src="imagenes/remodelacion 2.jpeg" alt="Proyecto Romanos">
+            <div class="project-overlay">
+                <div class="project-info">
+                    <span>Lugar</span>
+                    <h3>Divisiones en Vidrio</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <img src="imagenes/remodelacion 3.jpeg" alt="Proyecto Romanos">
+            <div class="project-overlay">
+                <div class="project-info">
+                    <span>Acabados</span>
+                    <h3>Cielo Raso Drywall</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <img src="imagenes/remodelacion 4.jpeg" alt="Proyecto Romanos">
+            <div class="project-overlay">
+                <div class="project-info">
+                    <span>Mobiliario</span>
+                    <h3>Restaurante</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <img src="imagenes/remodelacion 5.jpeg" alt="Proyecto Romanos">
+            <div class="project-overlay">
+                <div class="project-info">
+                    <span>Comercial</span>
+                    <h3>Entrada a Local</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <img src="imagenes/REMODELACION 6.jpeg" alt="Proyecto Romanos">
+            <div class="project-overlay">
+                <div class="project-info">
+                    <span>Decoración</span>
+                    <h3>Iluminación LED</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <section id="clientes" class="clients-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Nuestros Clientes</h2>
+            <p>Empresas de primer nivel que confían en nuestra excelencia técnica.</p>
+        </div>
+        
+        <div class="clients-container">
+            <div class="video-container"></div>
+    <a href="https://www.youtube.com/shorts/JY6fipryaPk" target="_blank" rel="noopener noreferrer" class="video-card-link">
+        <div class="video-card-preview">
+            <img src="imagenes/LOGO-ROMANOS-2.jpg" alt="Ver video de Romanos Arte & Decoración" class="video-thumbnail">
+            
+            <div class="video-overlay">
+                <div class="play-icon-circle">
+                    <i class="fas fa-play"></i>
+                </div>
+                <span>VER VIDEO</span>
+            </div>
+        </div>
+    </a>
+
+            <div class="clients-grid-side">
+                <div class="client-logo"><img src="imagenes/CLIENTE 1.png" alt="Origen Burgers"></div>
+                <div class="client-logo"><img src="imagenes/CLIENTE 2.jpg" alt="Nectaria"></div>
+                <div class="client-logo"><img src="imagenes/CLIENTE 3.jpg" alt="Don Benitez"></div>
+                <div class="client-logo"><img src="imagenes/CLIENTE 4.png" alt="Don Benitez"></div>
+                </div>
+        </div>
+    </div>
+</section>
+<section id="antes-despues" class="comparison-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Transformaciones Reales</h2>
+            <p>Resultados que hablan por nuestro compromiso con la calidad.</p>
+        </div>
+        
+        <div class="comparison-grid">
+            <div class="comparison-card">
+                <div class="comparison-images">
+                    <div class="img-box">
+                        <img src="imagenes/cliente a antes.jpeg" alt="Antes">
+                        <span>ANTES</span>
+                    </div>
+                    <div class="img-box">
+                        <img src="imagenes/cliente a despues.jpeg" alt="Después">
+                        <span>DESPUÉS</span>
+                    </div>
+                </div>
+                <h3>Remodelación - Cliente A</h3>
+            </div>
+
+            <div class="comparison-card">
+                <div class="comparison-images">
+                    <div class="img-box">
+                        <img src="imagenes/cliente b antes.jpeg" alt="Antes">
+                        <span>ANTES</span>
+                    </div>
+                    <div class="img-box">
+                        <img src="imagenes/cliente b despues.jpeg" alt="Después">
+                        <span>DESPUÉS</span>
+                    </div>
+                </div>
+                <h3>Remodelación - Cliente B</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contacto" class="quote-section">
+    <div class="container">
+        <div class="quote-wrapper">
+            <div class="quote-info">
+                <h2>Cotiza tu Proyecto</h2>
+                <p>Estamos listos para transformar tus espacios. Déjanos tus datos y nos pondremos en contacto lo más pronto posible.</p>
+                <div class="contact-details">
+                    <p><i class="fas fa-phone"></i> +57 (304) 390-2571</p>
+                    <p><i class="fas fa-envelope"></i> servicios.romanosarte@gmail.com</p>
+                </div>
+            </div>
+
+            <form action="https://formspree.io/f/servicios.romanosarte@gmail.com" method="POST" class="contact-form">
+    <div class="form-group">
+        <input type="text" name="nombre" placeholder="Nombre Completo" required>
+    </div>
+    <div class="form-group">
+        <input type="email" name="email" placeholder="Correo Electrónico" required>
+    </div>
+    <div class="form-group">
+        <textarea name="mensaje" placeholder="Cuéntanos sobre tu obra o remodelación..." rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn-submit">ENVIAR SOLICITUD</button>
+</form>
+
+        </div>
+    </div>
+</section>
+
+   <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>Contáctanos</h3>
+            <div class="footer-info">
+                <p><i class="fab fa-whatsapp"></i> +57 (304) 390-2571</p>
+                <p><i class="far fa-envelope"></i> servicios.romanosarte@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Síguenos</h3>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/romanos_decoracion/" target="_blank" class="social-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61567624677018"  target="_blank" class="social-icon facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send/?phone=3043902571&text&type=phone_number&app_absent=0" target="_blank" class="social-icon whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Ubicación & Legal</h3>
+            <div class="footer-location">
+                <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+                <p class="address-text">Calle 13 #42B - 05, Oficina 201 Puente Aranda</p>
+                
+                <a href="https://maps.app.goo.gl/4eirm7wTkfCty7Mv7" target="_blank" class="btn-mapa">
+                    <i class="fas fa-directions"></i> Ver en Google Maps
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2026 Romanos Arte & Decoración S.A.S. Todos los derechos reservados.</p>
+    </div>
+</footer>
+<script>
+function moveCarousel(button, direction) {
+    // 1. Buscamos el contenedor padre del botón que presionaste
+    const container = button.closest('.service-carousel-container');
+    // 2. Buscamos el "track" (donde están las imágenes) dentro de ese contenedor
+    const track = container.querySelector('.carousel-track');
+    
+    // 3. Calculamos cuánto mide una imagen para saber cuánto desplazarnos
+    const slideWidth = track.querySelector('img').clientWidth;
+    
+    // 4. Movemos el scroll de forma suave
+    track.scrollBy({
+        left: direction * slideWidth,
+        behavior: 'smooth'
+    });
+}
+</script>
+</body>
+</html>
